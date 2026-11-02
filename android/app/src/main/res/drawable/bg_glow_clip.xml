@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Animating the level reveals the glow from the centre outwards. -->
+<clip xmlns:android="http://schemas.android.com/apk/res/android"
+    android:clipOrientation="horizontal"
+    android:drawable="@drawable/bg_dashboard_glow"
+    android:gravity="center" />

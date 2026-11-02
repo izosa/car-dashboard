@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dashboard</string>
+    <string name="action_front_camera">Front view</string>
+    <string name="action_spotify">Spotify</string>
+    <string name="action_traccar">Traccar</string>
+    <string name="action_waze">Waze</string>
+    <string name="action_parking">Parking</string>
+    <string name="action_radio">Radio</string>
+    <string name="package_front_camera" translatable="false">com.syu.frontvideo</string>
+    <string name="package_spotify" translatable="false">com.spotify.music</string>
+    <string name="package_traccar" translatable="false">org.traccar.client</string>
+    <string name="package_waze" translatable="false">com.waze</string>
+    <string name="package_radio" translatable="false">com.syu.radio</string>
+    <string name="error_not_installed">%1$s is not installed</string>
+    <string name="action_change_home">Default launcher</string>
+    <string name="action_home">Home</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_enter_pin">Settings PIN</string>
+    <string name="error_wrong_pin">Wrong PIN</string>
+    <string name="error_pin_locked">Too many wrong PINs, try again in 30 seconds</string>
+    <string name="label_animated_background">Animated background</string>
+    <string name="label_fuel_display">Fuel display: %1$s</string>
+    <string name="title_fuel_display">Fuel consumption on the home screen</string>
+    <string name="fuel_display_off">Off</string>
+    <string name="fuel_display_corner">Corner</string>
+    <string name="fuel_display_gauges">Gauges</string>
+    <string name="label_fuel_instant">Fuel consumption</string>
+    <string name="label_fuel_range">Range</string>
+    <string name="unit_fuel_instant">L/100 km</string>
+    <string name="unit_fuel_range">km range</string>
+    <string name="title_trip">Trip computer</string>
+    <string name="trip_now">Now</string>
+    <string name="trip_1">Trip 1</string>
+    <string name="trip_2">Trip 2</string>
+    <string name="unit_trip_distance">km</string>
+    <string name="unit_trip_average">Ø L/100 km</string>
+    <string name="unit_trip_speed">Ø km/h</string>
+    <string name="unit_trip_destination">km to destination</string>
+    <string name="action_now_playing_access">Now playing access</string>
+    <string name="label_tracking">Location tracking</string>
+    <string name="header_tracking">Traccar settings</string>
+    <string name="header_parking">Parking settings</string>
+    <string name="label_tracking_server">Server: %1$s</string>
+    <string name="label_tracking_device_id">Device ID: %1$s</string>
+    <string name="label_auto_parking">Open Parking when arriving home</string>
+    <string name="label_home">Home: %1$s</string>
+    <string name="label_not_set">not set</string>
+    <string name="label_home_radius">Home radius: %1$d m</string>
+    <string name="title_tracking_server">Traccar server (OsmAnd port)</string>
+    <string name="title_tracking_device_id">Traccar device identifier</string>
+    <string name="title_home">Home point (latitude, longitude)</string>
+    <string name="hint_home">Filled in with the current location. Or paste coordinates, e.g. from Google Maps.</string>
+    <string name="title_home_radius">Home radius in metres</string>
+    <string name="error_invalid_value">Invalid value</string>
+    <string name="tracking_channel">Location tracking</string>
+    <string name="tracking_on">Sending location to Traccar</string>
+    <string name="tracking_home_only">Watching for arrival home</string>
+    <string name="network_offline">Offline</string>
+    <string name="network_wifi">Wi-Fi</string>
+    <string name="temperature">%1$d°</string>
+    <string name="temperature_text">%1$s°</string>
+    <string name="label_outside_temperature">Outside temperature</string>
+    <string name="weather_now">Now</string>
+    <string name="action_apps">All apps</string>
+    <string name="action_send_location">Send location</string>
+    <string name="action_previous">Previous</string>
+    <string name="action_play_pause">Play or pause</string>
+    <string name="action_next">Next</string>
+    <string name="label_volume">Volume</string>
+    <string name="action_volume_down">Volume down</string>
+    <string name="action_volume_up">Volume up</string>
+    <string name="action_recents">Recent apps</string>
+    <string name="recents_service_label">Dashboard recent apps button</string>
+    <string name="recents_service_description">Lets the Dashboard app drawer button open the recent apps screen. It does not read anything on screen.</string>
+    <string name="hint_enable_recents">Turn on "Dashboard recent apps button" to use this button</string>
+</resources>

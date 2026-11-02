@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#FF050608</color>
+    <color name="divider">#FF3A4049</color>
+    <color name="silver">#FFD2D6DC</color>
+    <color name="muted">#FF8A8F96</color>
+    <color name="accent">#FF2FB8FF</color>
+    <color name="settings_divider">#802FB8FF</color>
+    <color name="settings_stripe">#162FB8FF</color>
+    <color name="label">#FFE8EAEE</color>
+    <color name="ice">#FF96DCFF</color>
+
+    <style name="Theme.Dashboard" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/background</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowShowWallpaper">false</item>
+    </style>
+
+    <!-- Section title in Settings: cyan, no stripe or ripple (see SettingsActivity.stripeRows). -->
+    <style name="SettingsHeader">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">28dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:fontFamily">@font/goldman_regular</item>
+        <item name="android:textColor">@color/accent</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:tag">header</item>
+    </style>
+
+    <style name="StatusText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/goldman_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/label</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Same fixed width on both sides of the clock, so it stays centred. -->
+    <style name="FuelGauge">
+        <item name="android:layout_width">130dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="FuelGaugeIcon">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:src">@drawable/ic_fuel</item>
+    </style>
+
+    <style name="FuelGaugeValue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:alpha">0.8</item>
+        <item name="android:fontFamily">@font/orbitron_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="FuelGaugeUnit">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:fontFamily">@font/goldman_regular</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/muted</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TripValue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:alpha">0.85</item>
+        <item name="android:fontFamily">@font/orbitron_semibold</item>
+        <item name="android:gravity">bottom|center_horizontal</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <style name="TripUnit">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:fontFamily">@font/goldman_regular</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/muted</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="WeatherMediaButton">
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+</resources>

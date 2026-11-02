@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Three crossing spokes, each with a small V at both ends. -->
+    <path
+        android:pathData="M12,2v20M3.34,7l17.32,10M3.34,17l17.32,-10M9.5,3.5l2.5,2l2.5,-2M9.5,20.5l2.5,-2l2.5,2M3.5,10l2.8,-1l-0.5,-3M20.5,14l-2.8,1l0.5,3M3.5,14l2.8,1l-0.5,3M20.5,10l-2.8,-1l0.5,-3"
+        android:strokeColor="@color/ice"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

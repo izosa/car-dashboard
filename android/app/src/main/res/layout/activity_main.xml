@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Vertical weights mirror bg_dashboard: its cyan line sits at ~77% of the height. The
+     shortcut bar spans 13%..87% of the width, a little past the line's straight part (19%..81%),
+     to fit six shortcuts. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_dashboard"
+        android:contentDescription="@null" />
+
+    <com.izosa.home.car.dashboard.RevealImageView
+        android:id="@+id/backgroundTexture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_dashboard_texture"
+        android:contentDescription="@null" />
+
+    <ImageView
+        android:id="@+id/backgroundGlow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_glow_clip"
+        android:contentDescription="@null" />
+
+    <!-- Touch zones over the background's gauge arcs: left turns the volume down, right up.
+         They cover the arcs and reach in to the clock (22% of the width each) and down to the
+         line over the shortcut bar (10..77% of the height), so they are easy to hit while driving. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="67"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/volumeDownZone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="22"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/action_volume_down" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="56" />
+
+            <View
+                android:id="@+id/volumeUpZone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="22"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/action_volume_up" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="23" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="77"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="130dp"
+                android:adjustViewBounds="true"
+                android:alpha="0.85"
+                android:src="@drawable/ic_peugeot_logo"
+                android:tint="@color/silver"
+                android:contentDescription="@string/action_play_pause" />
+
+            <!-- Fuel gauges (Settings → Fuel display: Gauges) flank the clock in pairs, so the
+                 clock stays centred whether they show or not. -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:baselineAligned="false"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/fuelInstantGauge"
+                    style="@style/FuelGauge"
+                    android:layout_marginEnd="40dp">
+
+                    <ImageView
+                        style="@style/FuelGaugeIcon"
+                        android:contentDescription="@string/label_fuel_instant" />
+
+                    <TextView
+                        android:id="@+id/fuelInstant"
+                        style="@style/FuelGaugeValue" />
+
+                    <TextView
+                        style="@style/FuelGaugeUnit"
+                        android:text="@string/unit_fuel_instant" />
+
+                </LinearLayout>
+
+                <TextClock
+                    android:id="@+id/clock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:contentDescription="@string/action_apps"
+                    android:fontFamily="@font/orbitron_semibold"
+                    android:format12Hour="HH:mm"
+                    android:format24Hour="HH:mm"
+                    android:includeFontPadding="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="76sp" />
+
+                <LinearLayout
+                    android:id="@+id/fuelRangeGauge"
+                    style="@style/FuelGauge"
+                    android:layout_marginStart="40dp">
+
+                    <ImageView
+                        style="@style/FuelGaugeIcon"
+                        android:contentDescription="@string/label_fuel_range" />
+
+                    <TextView
+                        android:id="@+id/fuelRange"
+                        style="@style/FuelGaugeValue" />
+
+                    <TextView
+                        style="@style/FuelGaugeUnit"
+                        android:text="@string/unit_fuel_range" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/goldman_regular"
+                android:format12Hour="EEEE, d MMMM"
+                android:format24Hour="EEEE, d MMMM"
+                android:textColor="@color/muted"
+                android:textSize="18sp" />
+
+            <!-- Previous/next flank the weather only while a song plays; invisible (not gone) the
+                 rest of the time so the weather stays centred. -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/mediaPrevious"
+                    style="@style/WeatherMediaButton"
+                    android:layout_marginEnd="24dp"
+                    android:src="@drawable/ic_chevron_left"
+                    android:visibility="invisible"
+                    android:contentDescription="@string/action_previous" />
+
+                <LinearLayout
+                    android:id="@+id/weatherRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/bar_divider"
+                    android:dividerPadding="4dp"
+                    android:orientation="horizontal"
+                    android:showDividers="middle"
+                    android:background="?attr/selectableItemBackground"
+                    android:contentDescription="@string/action_send_location"
+                    android:visibility="gone" />
+
+                <ImageButton
+                    android:id="@+id/mediaNext"
+                    style="@style/WeatherMediaButton"
+                    android:layout_marginStart="24dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:visibility="invisible"
+                    android:contentDescription="@string/action_next" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nowPlayingRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/nowPlayingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/goldman_regular"
+                    android:maxLines="1"
+                    android:maxWidth="420dp"
+                    android:textColor="@color/label"
+                    android:textSize="15sp"
+                    android:textStyle="italic" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="23"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="13" />
+
+            <LinearLayout
+                android:id="@+id/shortcutBar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="74"
+                android:divider="@drawable/bar_divider"
+                android:dividerPadding="24dp"
+                android:orientation="horizontal"
+                android:showDividers="middle" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="13" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Stands in for the Teyes status bar, which the fullscreen home screen hides. All texts
+         share one size without font padding, and the bars and speaker match the digits' height,
+         so everything lines up on one centre line. -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/fuelCorner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_marginEnd="12dp"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="3dp"
+                android:src="@drawable/ic_fuel"
+                android:contentDescription="@string/label_fuel_instant" />
+
+            <TextView
+                android:id="@+id/fuelCornerText"
+                style="@style/StatusText" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/outsideTemperatureIcon"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginEnd="2dp"
+            android:visibility="gone"
+            android:contentDescription="@string/label_outside_temperature" />
+
+        <TextView
+            android:id="@+id/outsideTemperature"
+            style="@style/StatusText"
+            android:layout_marginEnd="5dp" />
+
+        <ImageView
+            android:id="@+id/trackingIcon"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_location_status"
+            android:visibility="gone"
+            android:contentDescription="@string/label_tracking" />
+
+        <TextView
+            android:id="@+id/networkType"
+            style="@style/StatusText"
+            android:layout_marginEnd="6dp" />
+
+        <com.izosa.home.car.dashboard.SignalBarsView
+            android:id="@+id/signalBars"
+            android:layout_width="18dp"
+            android:layout_height="12dp" />
+
+        <LinearLayout
+            android:id="@+id/volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <ImageView
+                android:id="@+id/volumeIcon"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:contentDescription="@string/label_volume" />
+
+            <TextView
+                android:id="@+id/volumeLevel"
+                style="@style/StatusText"
+                android:layout_marginStart="4dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

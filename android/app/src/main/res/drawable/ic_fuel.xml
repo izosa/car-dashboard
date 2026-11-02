@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Pump body with its window, and the hose on the right. -->
+    <path
+        android:pathData="M4,21V5a2,2 0,0 1,2 -2h6a2,2 0,0 1,2 2v16M3,21h12M7,7h4v4H7z"
+        android:strokeColor="@color/accent"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M14,10h2a2,2 0,0 1,2 2v4a1.5,1.5 0,0 0,3 0V8l-3,-3"
+        android:strokeColor="@color/accent"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

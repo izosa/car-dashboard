@@ -1,0 +1,24 @@
+# Copy to defaults.properties (gitignored) and fill in. These are only the defaults of a
+# fresh install; everything can still be changed in Settings. Empty or missing = not set.
+
+# OsmAnd-protocol location server, e.g. a Traccar server (empty = tracking off by default).
+tracking.server=https://traccar.example.com
+tracking.deviceId=car
+
+# Home point "latitude, longitude", for opening the parking app on arrival.
+home=
+
+# SHA-256 (hex) of "dashboard-settings:" + the PIN guarding Settings; empty = no PIN.
+#   printf 'dashboard-settings:1234' | sha256sum
+settings.pinSha256=
+
+# Package of an app to use while parking (e.g. a camera viewer): enables the `parking`
+# shortcut. Empty = no Parking shortcut and no arrival check.
+parking.package=
+
+# Open that app when arriving home (the home point and radius are set in Settings).
+parking.onArrival=false
+
+# Bottom shortcut bar, in order (default: front,radio,spotify,traccar,waze).
+# Ids: front, radio, spotify, traccar, waze, parking (needs parking.package).
+shortcuts=front,radio,spotify,traccar,waze

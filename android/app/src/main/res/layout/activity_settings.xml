@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingVertical="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/goldman_regular"
+            android:text="@string/title_settings"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:id="@+id/settingsRows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/settings_divider"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/animatedBackgroundSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="64dp"
+                android:fontFamily="@font/goldman_regular"
+                android:text="@string/label_animated_background"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/fuelDisplayRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:drawableEnd="@drawable/ic_fuel"
+                android:fontFamily="@font/goldman_regular"
+                android:gravity="center_vertical"
+                android:minHeight="64dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/changeHomeRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:drawableEnd="@drawable/ic_home"
+                android:fontFamily="@font/goldman_regular"
+                android:gravity="center_vertical"
+                android:minHeight="64dp"
+                android:text="@string/action_change_home"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/nowPlayingAccessRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:drawableEnd="@drawable/ic_play"
+                android:fontFamily="@font/goldman_regular"
+                android:gravity="center_vertical"
+                android:minHeight="64dp"
+                android:text="@string/action_now_playing_access"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/trackingHeader"
+                style="@style/SettingsHeader"
+                android:text="@string/header_tracking" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/trackingSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="64dp"
+                android:fontFamily="@font/goldman_regular"
+                android:text="@string/label_tracking"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/trackingServerRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:fontFamily="@font/goldman_regular"
+                android:gravity="center_vertical"
+                android:minHeight="64dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/trackingDeviceIdRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:fontFamily="@font/goldman_regular"
+                android:gravity="center_vertical"
+                android:minHeight="64dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/parkingHeader"
+                style="@style/SettingsHeader"
+                android:text="@string/header_parking" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/autoParkingSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="64dp"
+                android:fontFamily="@font/goldman_regular"
+                android:text="@string/label_auto_parking"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/homeRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:fontFamily="@font/goldman_regular"
+                android:gravity="center_vertical"
+                android:minHeight="64dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/homeRadiusRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:fontFamily="@font/goldman_regular"
+                android:gravity="center_vertical"
+                android:minHeight="64dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
