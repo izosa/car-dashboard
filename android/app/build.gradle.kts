@@ -20,8 +20,8 @@ android {
         applicationId = "com.izosa.home.car.dashboard"
         minSdk = 26
         targetSdk = 28
-        versionCode = 11
-        versionName = "1.3.2"
+        versionCode = 12
+        versionName = "2.0.0"
 
         fun field(name: String, value: String) =
             buildConfigField("String", name, "\"" + value.replace("\\", "\\\\").replace("\"", "\\\"") + "\"")
